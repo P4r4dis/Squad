@@ -33,3 +33,10 @@ Test(Skat, test_stimPaks)
     cr_assert(skat2.stimPaks() == 5);
     cr_assert(skat2.getStimPaks() == 5);
 }
+
+Test(Skat, test_name)
+{
+    Skat    skat;
+
+    cr_assert(skat.name() == "bob");
+}

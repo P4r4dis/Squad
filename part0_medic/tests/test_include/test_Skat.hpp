@@ -19,6 +19,7 @@ class   Skat
         int                     getStimPaks(void);
 
         int&                    stimPaks(void);
+        const std::string       &name(void);
 };
 
 #endif //   !__TEST_SKAT__

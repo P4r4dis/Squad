@@ -21,3 +21,8 @@ int&                    Skat::stimPaks(void)
 {
     return _stimPaks;
 }
+
+const std::string       &Skat::name(void)
+{
+    return _name;
+}
