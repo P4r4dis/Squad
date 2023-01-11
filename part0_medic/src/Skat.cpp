@@ -16,3 +16,8 @@ int                     Skat::getStimPaks(void)
 {
     return _stimPaks;
 }
+
+int&                    Skat::stimPaks(void)
+{
+    return _stimPaks;
+}

@@ -13,6 +13,7 @@ class   Skat
 
         const std::string&      getName(void);
         int                     getStimPaks(void);
+        int&                    stimPaks(void);
 };
 
 
