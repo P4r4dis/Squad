@@ -11,9 +11,8 @@ class   Skat
         Skat(const std::string& name = "bob", int stimPaks = 15);
         ~Skat();
 
-        const std::string&      getName(void);
-        int                     getStimPaks(void);
         int&                    stimPaks(void);
+        const std::string       &name(void);
 };
 
 
