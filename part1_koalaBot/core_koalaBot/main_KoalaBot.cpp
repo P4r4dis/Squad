@@ -13,7 +13,7 @@ int     main(void)
                 << arms.isFunctional() << std::endl;
     arms.informations();
     arms_ko.informations();
-    
+
     Parts::Legs     legs;
     Parts::Legs     legs_ko("L-02", false);
 
@@ -22,6 +22,15 @@ int     main(void)
                 << legs.isFunctional() << std::endl;
     legs.informations();
     legs_ko.informations();
+    
+    Parts::Head     head;
+    Parts::Head     head_ko("H-02", false);
+
+    std::cout << "head.serial = " << head.serial() << std::endl;
+    std::cout   << std::boolalpha << "head.isFunctional = " 
+                << head.isFunctional() << std::endl;
+    head.informations();
+    head_ko.informations();
 
 
     return 0;
