@@ -95,6 +95,7 @@ Test(KoalaBot, test_KoalaBot_ctor)
     koalaBot.setParts(arms);
     koalaBot.setParts(legs);
     koalaBot.setParts(head);
+    cr_assert(koalaBot.getSerial() == "Bob-01");
     cr_assert(koalaBot.getArms().isFunctional() == true);
     cr_assert(koalaBot.getLegs().isFunctional() == true);
     cr_assert(koalaBot.getHead().isFunctional() == true);
