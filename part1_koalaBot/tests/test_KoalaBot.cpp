@@ -82,4 +82,20 @@ Test(Parts_Head, test_Head_informations_KO, .init=redirect_all_stdout)
     head.informations();
     cr_assert_stdout_eq_str("\t[Parts] Head H-01 status : KO\n");
 }
+////////////////////////////////////////////////////////////////////////
+//KOALABOT
 
+Test(KoalaBot, test_KoalaBot_ctor)
+{
+    Parts::Arms     arms;
+    Parts::Legs     legs;
+    Parts::Head     head;
+
+    KoalaBot        koalaBot;
+    koalaBot.setParts(arms);
+    koalaBot.setParts(legs);
+    koalaBot.setParts(head);
+    cr_assert(koalaBot.getArms().isFunctional() == true);
+    cr_assert(koalaBot.getLegs().isFunctional() == true);
+    cr_assert(koalaBot.getHead().isFunctional() == true);
+}
