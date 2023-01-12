@@ -5,9 +5,14 @@
 #include <criterion/parameterized.h>
 
 #include "test_include/test_KoalaBot.hpp"
+#include "test_include/test_Parts.hpp"
+
 #include <iostream>
 
-Test(KoalaBot, test_construction)
-{
+Test(Parts_Arms, test_Arms_ctor)
+{  
+    Parts::Arms     arms;
 
+    cr_assert(arms.isFunctional() == true);
+    cr_assert(arms.serial() == "A-01");
 }

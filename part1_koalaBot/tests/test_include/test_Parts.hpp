@@ -4,14 +4,20 @@
 #include <string>
 
 
-void    redirect_all_stdout(void);
-
-class   Parts
+namespace   Parts
 {
-    private:
-    public:
-        Parts();
-        ~Parts();
-};
+    class   Arms
+    {
+        private:
+            std::string     _serial;
+            bool            _functional;
+        public:
+            Arms(std::string serial = "A-01", bool functional = true);
+            ~Arms(void);
+
+            bool            isFunctional(void) const;
+            std::string     serial(void) const;
+    };
+}
 
 #endif //   !__TEST_PARTS__
