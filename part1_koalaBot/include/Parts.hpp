@@ -2,14 +2,21 @@
 #   define  __PARTS__
 
 #include <string>
-class   Parts
+namespace   Parts
 {
-    private:
+    class   Arms
+    {
+        private:
+            std::string     _serial;
+            bool            _functional;
+        public:
+            Arms(std::string serial = "A-01", bool functional = true);
+            ~Arms(void);
 
-    public:
-        Parts();
-        ~Parts();
-};
+            bool            isFunctional(void) const;
+            std::string     serial(void) const;
+    };
+}
 
 
 #endif //   !__PARTS__
