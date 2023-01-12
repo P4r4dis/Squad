@@ -3,7 +3,8 @@ G++				=	g++
 TEST_SRC_PATH	=	./test_src
 TEST_INC_PATH	=	./test_include
 
-TEST_SRC		=	$(TEST_SRC_PATH)/test_Skat.cpp
+TEST_SRC		=	$(TEST_SRC_PATH)/test_Skat.cpp \
+					$(TEST_SRC_PATH)/test_Src.cpp
 
 NAME			=	test_Skat
 #############################################
