@@ -26,6 +26,16 @@ int     main(void)
     skat.addStimPaks(0);
     skat.addStimPaks(15);
     std::cout << "After skat.addStimPaks(number > 0), stimPaks = " << skat.stimPaks() << std::endl;
+
+    skat.stimPaks() = 0;
+    std::cout   << "skat.stimPaks = " << skat.stimPaks() 
+                << " , Answer will be Mediiiiiic" << std::endl;
+    skat.useStimPaks();
+    skat.stimPaks() = 15;
+    std::cout   << "skat.stimPaks = " << skat.stimPaks() << std::endl;
+    skat.useStimPaks();
+    std::cout   << "skat.stimPaks after skat.useStimPaks = " << skat.stimPaks() << std::endl;
+
     
     return 0;
 }
