@@ -32,8 +32,7 @@ Test(Parts_Arms, test_Arms_informations_KO, .init=redirect_all_stdout)
     arms.informations();
     cr_assert_stdout_eq_str("\t[Parts] Arms A-01 status : KO\n");
 }
-
-
+/// LEGS //////////////////////////////////////////////////////////////  
 Test(Parts_Legs, test_Legs_ctor)
 {  
     Parts::Legs     legs;
@@ -56,5 +55,31 @@ Test(Parts_Legs, test_Legs_informations_KO, .init=redirect_all_stdout)
 
     legs.informations();
     cr_assert_stdout_eq_str("\t[Parts] Legs L-01 status : KO\n");
+}
+
+/// HEAD //////////////////////////////////////////////////////////////  
+
+Test(Parts_Head, test_Head_ctor)
+{  
+    Parts::Head     head;
+
+    cr_assert(head.isFunctional() == true);
+    cr_assert(head.serial() == "H-01");
+}
+
+Test(Parts_Head, test_Head_informations_OK, .init=redirect_all_stdout)
+{  
+    Parts::Head     head;
+
+    head.informations();
+    cr_assert_stdout_eq_str("\t[Parts] Head H-01 status : OK\n");
+}
+
+Test(Parts_Head, test_Head_informations_KO, .init=redirect_all_stdout)
+{  
+    Parts::Head     head("H-01", false);
+
+    head.informations();
+    cr_assert_stdout_eq_str("\t[Parts] Head H-01 status : KO\n");
 }
 

@@ -32,6 +32,19 @@ namespace   Parts
             std::string     serial(void) const;
             void            informations(void) const;
     };
+    class   Head
+    {
+        private:
+            std::string     _serial;
+            bool            _functional;
+        public:
+            Head(std::string serial = "H-01", bool functional = true);
+            ~Head(void);
+
+            bool            isFunctional(void) const;
+            std::string     serial(void) const;
+            void            informations(void) const;
+    };
 
 
 }
