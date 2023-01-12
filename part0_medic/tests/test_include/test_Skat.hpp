@@ -23,6 +23,7 @@ class   Skat
         void                    shareStimPaks(int number, int &stock);
         void                    addStimPaks(unsigned int number);
         void                    useStimPaks(void);
+        void                    status(void) const;
 };
 
 #endif //   !__TEST_SKAT__

@@ -103,3 +103,11 @@ Test(Skat, test_useStimPaks, .init=redirect_all_stdout)
     cr_assert(skat.stimPaks() == 14);
     cr_assert_stdout_eq_str("Time to kick some ass and chew bubble gum.\n");
 }
+
+Test(Skat, test_status, .init=redirect_all_stdout)
+{
+    Skat    skat;
+    
+    skat.status();
+    cr_assert_stdout_eq_str("Soldier bob reporting 15 stimpaks remaining sir!\n");
+}
