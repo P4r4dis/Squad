@@ -11,16 +11,28 @@ PART0_SRC_TEST			=	$(PART0_TST_PATH)/$(NAME_MEDIC)_test.cpp
 TEST_NAME_MEDIC 		= 	test_$(NAME_MEDIC)
 
 ###############################################
+PART1_PATH 				= 	./part1_koalaBot
+PART1_SRC_PATH			=	./part1_koalaBot/src
+PART1_TST_PATH			=	./part1_koalaBot/tests
+PART1_INC_PATH			=	./part1_koalaBot/include
+NAME_KOALABOT			=	KoalaBot
+PART1_SRC				=	$(PART1_SRC_PATH)/KoalaBot.cpp \
+							$(PART1_SRC_PATH)/Parts.cpp
+PART1_SRC_TEST			=	$(PART1_TST_PATH)/$(NAME_KOALABOT)_test.cpp
+TEST_NAME_KOALABOT 		= 	test_$(NAME_KOALABOT)
+
+###############################################
 CORE_PATH				=	./core
 
 NAME					=	a.out
 TEST_NAME 				= 	test_$(NAME)
 
-INCFLAGS				+=	-I $(PART0_INC_PATH) 
+INCFLAGS				+=	-I $(PART0_INC_PATH) -I $(PART1_INC_PATH)
 
 CPPFLAGS				+= 	-Wall -Wextra -Werror $(INCFLAGS)#-W -std=c++1z
 
 SRCS 					= 	$(PART0_SRC) \
+							$(PART1_SRC) \
 							$(CORE_PATH)/main.cpp
 
 OBJS					=	$(SRCS:.cpp=.o)
@@ -37,7 +49,7 @@ RM						=	rm -rf
 clean					:
 							$(RM) $(OBJS)
 							@$(MAKE) $(CLEAN) -C $(PART0_TST_PATH)
-# @$(MAKE) $(CLEAN) -C $(PART1_TST_PATH)
+							@$(MAKE) $(CLEAN) -C $(PART1_TST_PATH)
 # @$(MAKE) $(CLEAN) -C $(PART2_TST_PATH)
 # @$(MAKE) $(CLEAN) -C $(PART3_TST_PATH)
 # @$(MAKE) $(CLEAN) -C $(PART4_TST_PATH)
@@ -48,8 +60,8 @@ fclean					:	clean
 							$(RM) $(NAME) $(TEST_NAME)
 							@$(MAKE) $(FCLEAN) -C $(PART0_TST_PATH)
 							@$(MAKE) $(FCLEAN) -C $(PART0_PATH)
-# @$(MAKE) $(FCLEAN) -C $(PART1_TST_PATH)
-# @$(MAKE) $(FCLEAN) -C $(PART1_PATH)
+							@$(MAKE) $(FCLEAN) -C $(PART1_TST_PATH)
+							@$(MAKE) $(FCLEAN) -C $(PART1_PATH)
 # @$(MAKE) $(FCLEAN) -C $(PART2_TST_PATH)
 # @$(MAKE) $(FCLEAN) -C $(PART2_PATH)
 # @$(MAKE) $(FCLEAN) -C $(PART3_TST_PATH)
@@ -65,9 +77,9 @@ part0 					: 	fclean
 							@$(MAKE) -C $(PART0_PATH)
 							$(PART0_PATH)/$(NAME_MEDIC)
 
-# part1 					: 	fclean
-# 							@$(MAKE) -C $(PART1_PATH)
-# 							$(PART1_PATH)/$(NAME_BORG)
+part1 					: 	fclean
+							@$(MAKE) -C $(PART1_PATH)
+							$(PART1_PATH)/$(NAME_KOALABOT)
 
 # part2 					: 	fclean
 # 							@$(MAKE) -C $(PART2_PATH)
@@ -85,9 +97,9 @@ tests_run_part0			:	fclean
 							@$(MAKE) -C $(PART0_TST_PATH)
 							$(PART0_TST_PATH)/$(TEST_NAME_MEDIC)
 
-# tests_run_part1			:	fclean
-# 							@$(MAKE) -C $(PART1_TST_PATH)
-# 							$(PART1_TST_PATH)/$(TEST_NAME_BORG)
+tests_run_part1			:	fclean
+							@$(MAKE) -C $(PART1_TST_PATH)
+							$(PART1_TST_PATH)/$(TEST_NAME_KOALABOT)
 
 # tests_run_part2			:	fclean
 # 							@$(MAKE) -C $(PART2_TST_PATH)
@@ -103,10 +115,10 @@ tests_run_part0			:	fclean
 
 tests_run				:	fclean
 							@$(MAKE) tests_run_part0
-# @$(MAKE) tests_run_part1
+							@$(MAKE) tests_run_part1
 # @$(MAKE) tests_run_part2
 # @$(MAKE) tests_run_part3
 # @$(MAKE) tests_run_part4
 
 
-.PHONY					: 	all clean fclean re part0 tests_run_part0 tests_run
+.PHONY					: 	all clean fclean re part0 tests_run_part0 part1 tests_run_part1 tests_run
