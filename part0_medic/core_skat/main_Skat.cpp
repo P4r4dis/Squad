@@ -23,7 +23,9 @@ int     main(void)
     std::cout << "Skat2.getStimPaks after sharing = " << skat2.stimPaks() << std::endl;
     std::cout   << "Skat.getStimPaks after sharing with Skat2 = " 
                 << skat.stimPaks() << std::endl;
-
+    skat.addStimPaks(0);
+    skat.addStimPaks(15);
+    std::cout << "After skat.addStimPaks(number > 0), stimPaks = " << skat.stimPaks() << std::endl;
     
     return 0;
 }
