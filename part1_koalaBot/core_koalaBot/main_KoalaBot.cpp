@@ -32,6 +32,34 @@ int     main(void)
     head.informations();
     head_ko.informations();
 
+    KoalaBot        koalaBot;
+    koalaBot.setParts(arms);
+    std::cout   << std::boolalpha << "KoalaBot set Arms :\n"
+                << "KoalaBot Arms's serial = " 
+                << koalaBot.getArms().serial() << std::endl
+                << "KoalaBot Arms is functional = "
+                << koalaBot.getArms().isFunctional() << std::endl
+                << "KoalaBot Arms informations : " << std::endl;
+    koalaBot.getArms().informations();
+
+    koalaBot.setParts(legs);
+    std::cout   << std::boolalpha << "KoalaBot set Legs :\n"
+                << "KoalaBot Legs's serial = " 
+                << koalaBot.getLegs().serial() << std::endl
+                << "KoalaBot Legs is functional = "
+                << koalaBot.getLegs().isFunctional() << std::endl
+                << "KoalaBot Legs informations : " << std::endl;
+    koalaBot.getLegs().informations();
+
+    koalaBot.setParts(head);
+    std::cout   << std::boolalpha << "KoalaBot set Head :\n"
+                << "KoalaBot Head's serial = " 
+                << koalaBot.getHead().serial() << std::endl
+                << "KoalaBot Head is functional = "
+                << koalaBot.getHead().isFunctional() << std::endl
+                << "KoalaBot Head informations : " << std::endl;
+    koalaBot.getHead().informations();
+
 
     return 0;
 }
