@@ -17,6 +17,7 @@ namespace   Parts
 
             bool            isFunctional(void) const;
             std::string     serial(void) const;
+            void            informations(void) const;
     };
 }
 

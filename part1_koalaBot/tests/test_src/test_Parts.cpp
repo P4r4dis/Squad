@@ -17,3 +17,9 @@ std::string     Parts::Arms::serial(void) const
 {
     return _serial;
 }
+
+void            Parts::Arms::informations(void) const
+{
+    std::cout   << "\t[Parts] Arms " << _serial << " status : " 
+                << (_functional ? "OK" : "KO") << std::endl; 
+}
