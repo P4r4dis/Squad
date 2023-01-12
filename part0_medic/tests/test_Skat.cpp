@@ -64,3 +64,20 @@ Test(Skat, test_shareStimPaks_greedy, .init=redirect_all_stdout)
     cr_assert(skat.stimPaks() == 15);
     cr_assert_stdout_eq_str("Don't be greedy\n");
 }
+
+Test(Skat, test_addStimPaks_zero, .init=redirect_all_stdout)
+{
+    Skat    skat;
+
+    skat.addStimPaks(0);
+    cr_assert(skat.getStimPaks() == 15);
+    cr_assert_stdout_eq_str("Hey boya, did you forget something?\n");
+}
+
+Test(Skat, test_addStimPaks)
+{
+    Skat    skat;
+
+    skat.addStimPaks(10);
+    cr_assert(skat.getStimPaks() == 25);
+}

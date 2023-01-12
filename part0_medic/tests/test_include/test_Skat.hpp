@@ -21,6 +21,7 @@ class   Skat
         int&                    stimPaks(void);
         const std::string       &name(void);
         void                    shareStimPaks(int number, int &stock);
+        void                    addStimPaks(unsigned int number);
 };
 
 #endif //   !__TEST_SKAT__
