@@ -81,3 +81,25 @@ Test(Skat, test_addStimPaks)
     skat.addStimPaks(10);
     cr_assert(skat.getStimPaks() == 25);
 }
+
+Test(Skat, test_useStimPaks_zero, .init=redirect_all_stdout)
+{
+    Skat    skat;
+
+    cr_assert(skat.stimPaks() == 15);
+    skat.stimPaks() = 0;
+    cr_assert(skat.stimPaks() == 0);
+
+    skat.useStimPaks();
+    cr_assert_stdout_eq_str("Mediiiiiic\n");
+}
+
+Test(Skat, test_useStimPaks, .init=redirect_all_stdout)
+{
+    Skat    skat;
+
+    cr_assert(skat.stimPaks() == 15);
+    skat.useStimPaks();
+    cr_assert(skat.stimPaks() == 14);
+    cr_assert_stdout_eq_str("Time to kick some ass and chew bubble gum.\n");
+}
