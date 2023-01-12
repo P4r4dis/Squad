@@ -36,6 +36,12 @@ int     main(void)
     skat.useStimPaks();
     std::cout   << "skat.stimPaks after skat.useStimPaks = " << skat.stimPaks() << std::endl;
 
-    
+    skat.status();
+
+    std::cout << "REAL MAIN STARTiNG :" << std::endl;
+    Skat    s("Junior", 5);
+    std::cout << "Soldier " << s.name() << std::endl;
+    s.status();
+    s.useStimPaks();
     return 0;
 }

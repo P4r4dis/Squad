@@ -5,6 +5,7 @@
 #include <criterion/parameterized.h>
 
 #include "test_include/test_Skat.hpp"
+#include <iostream>
 
 Test(Skat, test_skat_construction)
 {
@@ -110,4 +111,15 @@ Test(Skat, test_status, .init=redirect_all_stdout)
     
     skat.status();
     cr_assert_stdout_eq_str("Soldier bob reporting 15 stimpaks remaining sir!\n");
+}
+
+Test(Skat, test_skat_main, .init=redirect_all_stdout)
+{
+    Skat    s("Junior", 5);
+    std::cout << "Soldier " << s.name() << std::endl;
+    s.status();
+    s.useStimPaks();
+    cr_assert_stdout_eq_str("Soldier Junior\n\
+Soldier Junior reporting 5 stimpaks remaining sir!\n\
+Time to kick some ass and chew bubble gum.\n");
 }
