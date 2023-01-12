@@ -18,6 +18,19 @@ namespace   Parts
             void            informations(void) const;
 
     };
+    class   Legs
+    {
+        private:
+            std::string     _serial;
+            bool            _functional;
+        public:
+            Legs(std::string serial = "L-01", bool functional = true);
+            ~Legs(void);
+
+            bool            isFunctional(void) const;
+            std::string     serial(void) const;
+            void            informations(void) const;
+    };
 }
 
 
