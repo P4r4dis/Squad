@@ -29,6 +29,8 @@ class   KreogCom
         // std::unique_ptr<KreogCom>   getUniquePtrCom(void);
         void                        removeCom(void);
         void                        ping(void) const;
+
+        void                        locateSquad(void) const;
 };
 
 #endif //   !__TEST_KREOGCOM__

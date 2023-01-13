@@ -2,7 +2,8 @@
 #include <iostream>
 
 KreogCom::KreogCom(int x, int y, int serial) :  _x(x), _y(y),
-                                                m_serial(serial)
+                                                m_serial(serial),
+                                                _next(nullptr)
 {
     std::cout << "KreogCom " << m_serial << " initialized" << std::endl;
 }
@@ -83,4 +84,21 @@ void        KreogCom::ping(void) const
 {
     std::cout   << "KreogCom " << m_serial << " currently at "
                 << _x << " " << _y << std::endl;
+}
+
+void        KreogCom::locateSquad(void) const
+{
+    KreogCom    *current = _next;
+    
+    // Print information about all linked KreogCom
+    while (current != nullptr) {
+        current->ping();
+        if(current->_next)
+            current = current->_next;
+        else
+            break;
+    }
+    // Print information about the current KreogCom
+        this->ping();
+
 }
