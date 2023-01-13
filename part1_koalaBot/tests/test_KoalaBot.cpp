@@ -156,3 +156,16 @@ Test(KoalaBot, test_KoalaBot_status_false)
     koalaBot.informations();
     cr_assert(koalaBot.status() == false);
 }
+
+Test(KoalaBot, test_KoalaBot_main, .init=redirect_all_stdout)
+{
+    KoalaBot        koalaBot;
+
+    std::cout << std::boolalpha << koalaBot.status() << std::endl;
+    koalaBot.informations();
+    cr_assert_stdout_eq_str("true\n\
+[KoalaBot] Bob-01\n\
+\t[Parts] Arms A-01 status : OK\n\
+\t[Parts] Legs L-01 status : OK\n\
+\t[Parts] Head H-01 status : OK\n");
+}
