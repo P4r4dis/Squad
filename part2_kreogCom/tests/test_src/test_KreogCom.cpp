@@ -78,3 +78,9 @@ void        KreogCom::removeCom() {
         delete temp;
     }
 }
+
+void        KreogCom::ping(void) const
+{
+    std::cout   << "KreogCom " << m_serial << " currently at "
+                << _x << " " << _y << std::endl;
+}

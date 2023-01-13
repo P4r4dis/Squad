@@ -69,3 +69,12 @@ KreogCom 51 shutting down\n\
 KreogCom 65 shutting down\n\
 KreogCom 101010 shutting down\n");
 }
+
+Test(KreogCom, test_KreogCom_ping, .init = redirect_all_stdout)
+{  
+    KreogCom    k(42, 42, 101010);
+
+    k.ping();
+    cr_assert_stdout_eq_str("KreogCom 101010 initialized\n\
+KreogCom 101010 currently at 42 42\n");
+}

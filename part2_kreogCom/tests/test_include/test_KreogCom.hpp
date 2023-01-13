@@ -28,6 +28,7 @@ class   KreogCom
         KreogCom                    *getCom(void);
         // std::unique_ptr<KreogCom>   getUniquePtrCom(void);
         void                        removeCom(void);
+        void                        ping(void) const;
 };
 
 #endif //   !__TEST_KREOGCOM__
