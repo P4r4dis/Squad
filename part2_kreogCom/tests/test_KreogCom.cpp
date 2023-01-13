@@ -8,7 +8,12 @@
 
 #include <iostream>
 
-Test(Parts_Arms, test_Arms_ctor)
+Test(KreogCom, test_KreogCom_ctor, .init = redirect_all_stdout)
 {  
+    KreogCom    k(42, 42, 101010);
 
+    cr_assert(k.getX() == 42);
+    cr_assert(k.getY() == 42);
+    cr_assert(k.getSerial() == 101010);
+    cr_assert_stdout_eq_str("KreogCom 101010 initialized\n");
 }
