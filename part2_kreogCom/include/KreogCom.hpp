@@ -22,6 +22,7 @@ class   KreogCom
         KreogCom    *getCom(void);
 
         void        removeCom(void);
+        void        ping(void) const;
 };
 
 

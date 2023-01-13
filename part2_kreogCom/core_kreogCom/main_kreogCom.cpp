@@ -20,6 +20,9 @@ int     main(void)
                 << k.getCom()->getY() << std::endl;
     k.addCom(73, 34, 51);
 
+    std::cout << "KreogCom.ping :" << std::endl;
+    k.ping();
+
     std::cout << "KreogCom destruction :" << std::endl;
     k.removeCom();
     k.removeCom();
