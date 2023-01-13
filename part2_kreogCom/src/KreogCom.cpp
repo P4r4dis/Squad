@@ -33,10 +33,10 @@ void        KreogCom::addCom(int x, int y, int serial)
     // Create a new KreogCom with the given x, y, and serial values
     KreogCom    *newKreogCom = new KreogCom(x, y, serial);
 
-    // Get the current next KreogCom
+    // Get the current _next KreogCom
     KreogCom    *oldKreogCom = getCom();
 
-    // If there is already a next KreogCom
+    // If there is already a _next KreogCom
     if (oldKreogCom != nullptr) {
         // Link the new KreogCom to the old one
         newKreogCom->_next = oldKreogCom;
@@ -51,15 +51,18 @@ KreogCom    *KreogCom::getCom(void)
 }
 
 
-void        KreogCom::removeCom() {
-    if (_next != nullptr) {
-        // Create a pointer to the next KreogCom in the list
+void        KreogCom::removeCom() 
+{
+
+    if (_next != nullptr) 
+    {
+    // Create a pointer to the _next KreogCom in the list
         KreogCom* temp = _next;
-        // Update the current KreogCom's next pointer to the next next KreogCom
+    // Update the current KreogCom's _next pointer to the _next _next KreogCom
         _next = _next->_next;
-        // Set the next pointer of the deleted object to nullptr to avoid any dangling pointers
+    // Set the _next pointer of the deleted object to nullptr to avoid any dangling pointers
         temp->_next = nullptr;
-        // Delete the next KreogCom
+    // Delete the _next KreogCom
         delete temp;
     }
 }
@@ -72,6 +75,7 @@ void        KreogCom::ping(void) const
 
 void        KreogCom::locateSquad(void) const
 {
+
     KreogCom    *current = _next;
     
     // Print information about all linked KreogCom
