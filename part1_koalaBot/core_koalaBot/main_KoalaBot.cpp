@@ -80,6 +80,9 @@ int     main(void)
     std::cout   << std::boolalpha << "KoalaBot status : "
                 << koalaBot.status() << std::endl;
     
-
+    std::cout << "REAL MAIN STARTiNG :" << std::endl;
+    KoalaBot    kb;
+    std::cout << std::boolalpha << kb.status() << std::endl;
+    kb.informations();
     return 0;
 }
