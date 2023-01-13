@@ -8,7 +8,9 @@ KreogCom::KreogCom(int x, int y, int serial) :  _x(x), _y(y),
 }
 
 KreogCom::~KreogCom(void)
-{}
+{
+    std::cout << "KreogCom " << m_serial << " shutting down" << std::endl;
+}
 
 int     KreogCom::getSerial(void) const
 {

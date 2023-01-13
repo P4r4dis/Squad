@@ -9,5 +9,7 @@ int     main(void)
     std::cout << "KreogCom.getSerial = " << k.getSerial() << std::endl;
     std::cout << "KreogCom.getX = " << k.getX() << std::endl;
     std::cout << "KreogCom.getY = " << k.getY() << std::endl;
+
+    std::cout << "KreogCom destruction :" << std::endl;
     return 0;
 }
