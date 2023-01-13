@@ -48,3 +48,17 @@ KreogCom    *KreogCom::getCom(void)
 {
     return _next;
 }
+
+
+void        KreogCom::removeCom() {
+    if (_next != nullptr) {
+        // Create a pointer to the next KreogCom in the list
+        KreogCom* temp = _next;
+        // Update the current KreogCom's next pointer to the next next KreogCom
+        _next = _next->_next;
+        // Set the next pointer of the deleted object to nullptr to avoid any dangling pointers
+        temp->_next = nullptr;
+        // Delete the next KreogCom
+        delete temp;
+    }
+}

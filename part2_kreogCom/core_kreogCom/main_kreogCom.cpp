@@ -18,7 +18,11 @@ int     main(void)
                 << k.getCom()->getX() << std::endl;
     std::cout   << "KreogCom.getY After add new Com = " 
                 << k.getCom()->getY() << std::endl;
+    k.addCom(73, 34, 51);
 
     std::cout << "KreogCom destruction :" << std::endl;
+    k.removeCom();
+    k.removeCom();
+    
     return 0;
 }
