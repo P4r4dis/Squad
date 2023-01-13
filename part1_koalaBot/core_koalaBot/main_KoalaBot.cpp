@@ -73,5 +73,13 @@ int     main(void)
     std::cout << "KoalaBot informations :" << std::endl;
     koalaBot.informations();
 
+    std::cout   << std::boolalpha << "KoalaBot status : "
+                << koalaBot.status() << std::endl;
+    std::cout << "Status after swap KO parts to OK parts : " << std::endl;
+    koalaBot.swapParts(head);
+    std::cout   << std::boolalpha << "KoalaBot status : "
+                << koalaBot.status() << std::endl;
+    
+
     return 0;
 }

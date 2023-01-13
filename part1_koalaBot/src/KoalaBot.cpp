@@ -71,3 +71,11 @@ void            KoalaBot::informations(void)
     _legs.informations();
     _head.informations();
 }
+
+bool            KoalaBot::status(void)
+{
+    if (_arms.isFunctional() && _legs.isFunctional() && _head.isFunctional())
+        return true;
+    else
+        return false;
+}
