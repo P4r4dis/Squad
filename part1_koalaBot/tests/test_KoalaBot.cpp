@@ -137,3 +137,22 @@ Test(KoalaBot, test_KoalaBot_informations, .init=redirect_all_stdout)
 \t[Parts] Legs L-01 status : OK\n\
 \t[Parts] Head H-01 status : OK\n");
 }
+
+
+Test(KoalaBot, test_KoalaBot_status_true)
+{
+    KoalaBot        koalaBot;
+
+    koalaBot.informations();
+    cr_assert(koalaBot.status() == true);
+}
+
+Test(KoalaBot, test_KoalaBot_status_false)
+{
+    KoalaBot        koalaBot;
+    Parts::Arms     armsToSwap("name1", false);
+
+    koalaBot.swapParts(armsToSwap);
+    koalaBot.informations();
+    cr_assert(koalaBot.status() == false);
+}

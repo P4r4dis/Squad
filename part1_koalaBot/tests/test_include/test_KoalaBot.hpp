@@ -36,7 +36,7 @@ class   KoalaBot
         void            swapParts(Parts::Head &head);
 
         void            informations(void);
-
+        bool            status(void);
 };
 
 #endif //   !__TEST_KOALABOT__
