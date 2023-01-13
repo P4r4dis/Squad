@@ -9,6 +9,7 @@ class   KreogCom
         int         _x;
         int         _y;
         const int   m_serial;
+        KreogCom    *_next;
     public:
         KreogCom(int x, int y, int serial);
         ~KreogCom(void);
@@ -16,6 +17,9 @@ class   KreogCom
         int         getSerial(void) const;
         int         getX(void);
         int         getY(void);
+
+        void        addCom(int x, int y, int serial);
+        KreogCom    *getCom(void);
 };
 
 

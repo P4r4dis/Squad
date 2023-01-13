@@ -38,6 +38,7 @@ Test(KreogCom, test_KreogCom_addCom, .init = redirect_all_stdout)
     cr_assert(k.getY() == 42);
     cr_assert(k.getSerial() == 101010);
     k.addCom(56, 25, 65);
+    cr_assert(k.getCom()->getX() == 56);
     k.addCom(73, 34, 51);
 
     k.~KreogCom();
