@@ -70,5 +70,8 @@ int     main(void)
                 << "KoalaBot Head informations : " << std::endl;
     koalaBot.getHead().informations();
 
+    std::cout << "KoalaBot informations :" << std::endl;
+    koalaBot.informations();
+
     return 0;
 }

@@ -63,3 +63,11 @@ void            KoalaBot::swapParts(Parts::Head &head)
 {
     setParts(head);
 }
+
+void            KoalaBot::informations(void)
+{
+    std::cout << "[KoalaBot] " << _serial << std::endl;
+    _arms.informations();
+    _legs.informations();
+    _head.informations();
+}

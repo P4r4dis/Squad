@@ -32,7 +32,7 @@ class   KoalaBot
         Parts::Head     getHead(void);
         void            swapParts(Parts::Head &head);
 
-
+        void            informations(void);
 };
 
 
