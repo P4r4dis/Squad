@@ -126,3 +126,14 @@ Test(KoalaBot, test_KoalaBot_swapParts)
     cr_assert(koalaBot.getLegs().isFunctional() == false);
     cr_assert(koalaBot.getHead().isFunctional() == false);
 }
+
+Test(KoalaBot, test_KoalaBot_informations, .init=redirect_all_stdout)
+{
+    KoalaBot        koalaBot;
+
+    koalaBot.informations();
+    cr_assert_stdout_eq_str("[KoalaBot] Bob-01\n\
+\t[Parts] Arms A-01 status : OK\n\
+\t[Parts] Legs L-01 status : OK\n\
+\t[Parts] Head H-01 status : OK\n");
+}
