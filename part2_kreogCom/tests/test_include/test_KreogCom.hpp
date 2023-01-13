@@ -23,10 +23,11 @@ class   KreogCom
         int                         getY(void);
 
         void                        addCom(int x, int y, int serial);
-        void                        addComSmartPtr(int x, int y, int serial);
+        // void                        addComSmartPtr(int x, int y, int serial);
 
         KreogCom                    *getCom(void);
         // std::unique_ptr<KreogCom>   getUniquePtrCom(void);
+        void                        removeCom(void);
 };
 
 #endif //   !__TEST_KREOGCOM__

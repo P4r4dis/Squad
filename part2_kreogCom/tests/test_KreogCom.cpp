@@ -48,3 +48,24 @@ KreogCom 51 initialized\n\
 KreogCom 101010 shutting down\n");
 }
 
+Test(KreogCom, test_KreogCom_removeCom, .init = redirect_all_stdout)
+{  
+    KreogCom    k(42, 42, 101010);
+
+    cr_assert(k.getX() == 42);
+    cr_assert(k.getY() == 42);
+    cr_assert(k.getSerial() == 101010);
+    k.addCom(56, 25, 65);
+    cr_assert(k.getCom()->getX() == 56);
+    k.addCom(73, 34, 51);
+
+    k.removeCom();
+    k.removeCom();
+    k.~KreogCom();
+    cr_assert_stdout_eq_str("KreogCom 101010 initialized\n\
+KreogCom 65 initialized\n\
+KreogCom 51 initialized\n\
+KreogCom 51 shutting down\n\
+KreogCom 65 shutting down\n\
+KreogCom 101010 shutting down\n");
+}
