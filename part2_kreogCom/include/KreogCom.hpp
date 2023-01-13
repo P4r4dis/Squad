@@ -23,6 +23,7 @@ class   KreogCom
 
         void        removeCom(void);
         void        ping(void) const;
+        void        locateSquad(void) const;
 };
 
 

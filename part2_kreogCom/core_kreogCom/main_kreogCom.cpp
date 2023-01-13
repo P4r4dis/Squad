@@ -23,6 +23,9 @@ int     main(void)
     std::cout << "KreogCom.ping :" << std::endl;
     k.ping();
 
+    std::cout << "KreogCom.locateSquad = " << std::endl;
+    k.locateSquad();
+
     std::cout << "KreogCom destruction :" << std::endl;
     k.removeCom();
     k.removeCom();
