@@ -100,3 +100,29 @@ Test(KoalaBot, test_KoalaBot_ctor)
     cr_assert(koalaBot.getLegs().isFunctional() == true);
     cr_assert(koalaBot.getHead().isFunctional() == true);
 }
+
+Test(KoalaBot, test_KoalaBot_swapParts)
+{
+    Parts::Arms     arms;
+    Parts::Legs     legs;
+    Parts::Head     head;
+
+    KoalaBot        koalaBot;
+    koalaBot.setParts(arms);
+    koalaBot.setParts(legs);
+    koalaBot.setParts(head);
+    cr_assert(koalaBot.getSerial() == "Bob-01");
+    cr_assert(koalaBot.getArms().isFunctional() == true);
+    cr_assert(koalaBot.getLegs().isFunctional() == true);
+    cr_assert(koalaBot.getHead().isFunctional() == true);
+
+    Parts::Arms     armsToSwap("name1", false);
+    Parts::Legs     legsToSwap("namw2", false);
+    Parts::Head     headToSwap("name3", false);
+    koalaBot.swapParts(armsToSwap);
+    koalaBot.swapParts(legsToSwap);
+    koalaBot.swapParts(headToSwap);
+    cr_assert(koalaBot.getArms().isFunctional() == false);
+    cr_assert(koalaBot.getLegs().isFunctional() == false);
+    cr_assert(koalaBot.getHead().isFunctional() == false);
+}
