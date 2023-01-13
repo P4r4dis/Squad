@@ -60,6 +60,15 @@ int     main(void)
                 << "KoalaBot Head informations : " << std::endl;
     koalaBot.getHead().informations();
 
+    std::cout << "KoalaBot.swapParts :" << std::endl;
+    koalaBot.swapParts(head_ko);
+    std::cout   << std::boolalpha << "KoalaBot set Head :\n"
+                << "KoalaBot Head's serial = " 
+                << koalaBot.getHead().serial() << std::endl
+                << "KoalaBot Head is functional = "
+                << koalaBot.getHead().isFunctional() << std::endl
+                << "KoalaBot Head informations : " << std::endl;
+    koalaBot.getHead().informations();
 
     return 0;
 }

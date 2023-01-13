@@ -1,6 +1,7 @@
 #include "../include/KoalaBot.hpp"
 #include <iostream>
 
+
 KoalaBot::KoalaBot( Parts::Arms arms,
                     Parts::Legs legs,
                     Parts::Head head,
@@ -29,6 +30,11 @@ Parts::Arms     KoalaBot::getArms(void)
     return _arms;
 }
 
+void            KoalaBot::swapParts(Parts::Arms &arms)
+{
+    setParts(arms);
+}
+
 void            KoalaBot::setParts(Parts::Legs &legs)
 {
     _legs = legs;
@@ -39,6 +45,11 @@ Parts::Legs     KoalaBot::getLegs(void)
     return _legs;
 }
 
+void            KoalaBot::swapParts(Parts::Legs &legs)
+{
+    setParts(legs);
+}
+
 void            KoalaBot::setParts(Parts::Head &head)
 {
     _head = head;
@@ -46,4 +57,9 @@ void            KoalaBot::setParts(Parts::Head &head)
 Parts::Head     KoalaBot::getHead(void)
 {
     return _head;
+}
+
+void            KoalaBot::swapParts(Parts::Head &head)
+{
+    setParts(head);
 }

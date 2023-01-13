@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Parts.hpp"
+
 class   KoalaBot
 {
     private:
@@ -20,12 +21,17 @@ class   KoalaBot
         std::string     getSerial(void);
         void            setParts(Parts::Arms &arms);
         Parts::Arms     getArms(void);
+        void            swapParts(Parts::Arms &arms);
 
         void            setParts(Parts::Legs &legs);
         Parts::Legs     getLegs(void);
+        void            swapParts(Parts::Legs &legs);
+
 
         void            setParts(Parts::Head &head);
         Parts::Head     getHead(void);
+        void            swapParts(Parts::Head &head);
+
 
 };
 
