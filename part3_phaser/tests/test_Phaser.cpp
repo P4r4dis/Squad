@@ -10,5 +10,9 @@
 
 Test(KreogCom, test_KreogCom_ctor)
 {  
- cr_assert(1 == 1);
+    Phaser p;
+
+    cr_assert(p.getCurrentAmmos() == 20);
+    cr_assert(p.getEmpty() == 0);
+    cr_assert(p.getAmmoType() == 1);
 }
