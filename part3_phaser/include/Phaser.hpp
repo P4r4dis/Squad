@@ -5,11 +5,24 @@
 
 class   Phaser
 {
-    private:
-
     public:
-        Phaser();
+        enum                AmmoType
+        {
+            REGULAR,
+            PLASMA,
+            ROCKET
+        };
+
+        Phaser(int maxAmmo = 20, AmmoType type = REGULAR);
         ~Phaser(void);
+
+        int                 getCurrentAmmos(void);
+        int                 getEmpty(void)  const;
+        AmmoType            getAmmoType(void);
+    private:
+        static const int    Empty = 0;
+        int                 _maxAmmo;
+        AmmoType            _type;
 };
 
 
