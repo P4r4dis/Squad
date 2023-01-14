@@ -1,6 +1,8 @@
 #include "../part0_medic/include/Skat.hpp"
 #include "../part1_koalaBot/include/KoalaBot.hpp"
 #include "../part2_kreogCom/include/KreogCom.hpp"
+#include "../part3_phaser/include/Phaser.hpp"
+
 #include <iostream>
 
 int     main(void)
