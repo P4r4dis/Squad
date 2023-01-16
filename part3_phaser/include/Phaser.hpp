@@ -2,6 +2,7 @@
 #   define  __PHASER__
 
 #include <string>
+#include "Sounds.hpp"
 
 class   Phaser
 {
@@ -19,6 +20,7 @@ class   Phaser
         int                 getCurrentAmmos(void);
         int                 getEmpty(void)  const;
         AmmoType            getAmmoType(void);
+        void                fire(void);
     private:
         static const int    Empty = 0;
         int                 _maxAmmo;
