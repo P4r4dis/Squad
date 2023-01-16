@@ -43,3 +43,8 @@ void                Phaser::fire(void)
         _maxAmmo--;
     }
 }
+
+void                Phaser::ejectClip(void)
+{
+    _maxAmmo = 0;
+}
