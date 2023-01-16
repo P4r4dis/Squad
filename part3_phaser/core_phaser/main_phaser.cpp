@@ -19,5 +19,9 @@ int     main(void)
     phaser2.ejectClip();
     std::cout << "phaser2.getCurrentAmmos after ejectClip = " << phaser2.getCurrentAmmos() << std::endl;
 
+    std::cout << "phaser.getAmmoType before changeType = " << phaser.getAmmoType() << std::endl;
+    phaser.changeType(Phaser::ROCKET);
+    std::cout << "phaser.getAmmoType after changeType = " << phaser.getAmmoType() << std::endl;
+
     return 0;
 }

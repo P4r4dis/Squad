@@ -46,3 +46,22 @@ void                Phaser::ejectClip(void)
 {
     _maxAmmo = 0;
 }
+
+void                Phaser::changeType(AmmoType newType)
+{
+    if (newType == REGULAR)
+    {
+        _type = newType;
+        std::cout << "Switching ammo to type: regular" << std::endl;
+    }
+    else if (newType == PLASMA)
+    {
+        _type = newType;
+        std::cout << "Switching ammo to type: plasma" << std::endl;       
+    }
+    else
+    {
+        _type = newType;
+        std::cout << "Switching ammo to type: rocket" << std::endl;          
+    }
+}
