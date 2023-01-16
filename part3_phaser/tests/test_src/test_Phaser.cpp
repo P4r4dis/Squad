@@ -1,4 +1,5 @@
 #include "../test_include/test_Phaser.hpp"
+
 #include <iostream>
 
 
@@ -21,4 +22,24 @@ int                 Phaser::getEmpty(void) const
 Phaser::AmmoType    Phaser::getAmmoType(void)
 {
     return _type;
+}
+
+const std::string Sounds::Regular = "PiouPiouu";
+const std::string Sounds::Plasma  = "Pffiizzzz";
+const std::string Sounds::Rocket  = "Booooooom";
+
+void                Phaser::fire(void)
+{
+    if (getCurrentAmmos() == getEmpty())
+        std::cout << "Clip empty, please reload" << std::endl;
+    else
+    {
+        if (_type == REGULAR)
+            std::cout << Sounds::Regular << std::endl;
+        else if (_type == PLASMA)
+            std::cout << Sounds::Plasma << std::endl;
+        else
+            std::cout << Sounds::Rocket << std::endl;
+        _maxAmmo--;
+    }
 }

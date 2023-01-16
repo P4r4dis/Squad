@@ -2,13 +2,14 @@
 #   define  __TEST_PHASER__
 
 #include <string>
-#include <memory>
+#include "test_sounds.hpp"
 
 void    redirect_all_stdout(void);
 
 class   Phaser
 {
     public:
+
         enum                AmmoType
         {
             REGULAR,
@@ -22,6 +23,7 @@ class   Phaser
         int                 getCurrentAmmos(void);
         int                 getEmpty(void)  const;
         AmmoType            getAmmoType(void);
+        void                fire(void);
     private:
         static const int    Empty = 0;
         int                 _maxAmmo;
