@@ -14,5 +14,10 @@ int     main(void)
     std::cout << "2e phaser.fire = ";
     phaser.fire();
     std::cout << "phaser.getCurrentAmmos after fire = " << phaser.getCurrentAmmos() << std::endl;
+    Phaser phaser2;
+    std::cout << "phaser2.getCurrentAmmos = " << phaser2.getCurrentAmmos() << std::endl;
+    phaser2.ejectClip();
+    std::cout << "phaser2.getCurrentAmmos after ejectClip = " << phaser2.getCurrentAmmos() << std::endl;
+
     return 0;
 }

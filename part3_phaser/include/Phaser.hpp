@@ -21,6 +21,7 @@ class   Phaser
         int                 getEmpty(void)  const;
         AmmoType            getAmmoType(void);
         void                fire(void);
+        void                ejectClip(void);
     private:
         static const int    Empty = 0;
         int                 _maxAmmo;
