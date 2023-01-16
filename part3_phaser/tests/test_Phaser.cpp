@@ -55,3 +55,17 @@ Test(Phaser, test_Phaser_fire_Rocket, .init = redirect_all_stdout)
     cr_assert(p.getCurrentAmmos() == 19);
     cr_assert_stdout_eq_str("Booooooom\n");
 }
+
+Test(Phaser, test_Phaser_fire_Rocket_empty, .init = redirect_all_stdout)
+{  
+    Phaser p(1, Phaser::ROCKET);
+
+    cr_assert(p.getCurrentAmmos() == 1);
+    cr_assert(p.getEmpty() == 0);
+    cr_assert(p.getAmmoType() == Phaser::ROCKET);
+
+    p.fire();
+    cr_assert(p.getCurrentAmmos() == 0);
+    p.fire();
+    cr_assert_stdout_eq_str("Booooooom\nClip empty, please reload\n");
+}
