@@ -79,3 +79,14 @@ Test(Phaser, test_Phaser_ejectClip)
     p.ejectClip();
     cr_assert(p.getCurrentAmmos() == 0);
 }
+
+Test(Phaser, test_Phaser_changeType, .init = redirect_all_stdout)
+{  
+    Phaser p(1, Phaser::ROCKET);
+
+    cr_assert(p.getAmmoType() == Phaser::ROCKET);
+    p.changeType(Phaser::PLASMA);
+    cr_assert(p.getAmmoType() == Phaser::PLASMA);
+
+    cr_assert_stdout_eq_str("Switching ammo to type: plasma\n");
+}

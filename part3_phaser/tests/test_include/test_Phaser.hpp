@@ -25,6 +25,7 @@ class   Phaser
         AmmoType            getAmmoType(void);
         void                fire(void);
         void                ejectClip(void);
+        void                changeType(AmmoType newType);
     private:
         static const int    Empty = 0;
         int                 _maxAmmo;
