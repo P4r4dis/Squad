@@ -31,5 +31,16 @@ int     main(void)
     k.removeCom();
     std::cout << "KreogCom Main Ending------------------------------" << std::endl;
     std::cout << std::endl;
+
+    std::cout << "Phaser Main Starting---------------------------:" << std::endl;
+    Phaser  p(5, Phaser::ROCKET);
+
+    p.fire();
+    p.reload();
+
+    std::cout << "Firing all ammunitions" << std::endl;
+    while(p.getCurrentAmmos () > 0)
+        p.fire();
+    std::cout << "Phaser Main Ending------------------------------" << std::endl;
     return 0;
 }
