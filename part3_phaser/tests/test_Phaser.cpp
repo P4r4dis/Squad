@@ -101,3 +101,22 @@ Test(Phaser, test_Phaser_reload, .init = redirect_all_stdout)
     cr_assert(p.getCurrentAmmos() == 1);
     cr_assert_stdout_eq_str("Reloading...\n");
 }
+
+Test(Phaser, test_Phaser_addAmmo_clip_full, .init = redirect_all_stdout)
+{  
+    Phaser p(1, Phaser::ROCKET);
+    p.addAmmo(Phaser::REGULAR);
+    cr_assert_stdout_eq_str("Clip full\n");
+}
+
+Test(Phaser, test_Phaser_addAmmo, .init = redirect_all_stdout)
+{  
+    Phaser p(2, Phaser::ROCKET);
+    cr_assert(p.getCurrentAmmos() == 2);
+    p.fire();
+    cr_assert(p.getCurrentAmmos() == 1);
+    p.addAmmo(Phaser::REGULAR);
+    cr_assert(p.getCurrentAmmos() == 2);
+
+    cr_assert_stdout_eq_str("Booooooom\n");
+}

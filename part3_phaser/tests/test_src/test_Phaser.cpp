@@ -101,3 +101,11 @@ void                Phaser::reload(void)
     for(int i = 0; i < _currentAmmo; i++)
         _magazine.push_back(_type);
 }
+
+void                Phaser::addAmmo(AmmoType type)
+{
+    if (_currentAmmo == _maxAmmo)
+        std::cout << "Clip full" << std::endl;
+    _magazine.push_back(type);
+    _currentAmmo++;
+}

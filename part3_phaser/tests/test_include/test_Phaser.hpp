@@ -30,6 +30,8 @@ class                           Phaser
         void                            changeType(AmmoType newType);
         void                            reload(void);
         std::vector<Phaser::AmmoType>   getMagazine(void);
+        void                            addAmmo(AmmoType type);
+
 
     private:
         int                             _maxAmmo;
