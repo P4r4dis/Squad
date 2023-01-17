@@ -2,12 +2,14 @@
 #   define  __PHASER__
 
 #include <string>
+#include <vector>
 #include "Sounds.hpp"
 
-class   Phaser
+class                           Phaser
 {
     public:
-        enum                AmmoType
+
+        enum                    AmmoType
         {
             REGULAR,
             PLASMA,
@@ -16,17 +18,24 @@ class   Phaser
 
         Phaser(int maxAmmo = 20, AmmoType type = REGULAR);
         ~Phaser(void);
+        int                             getCurrentAmmos(void);
+        int                             getMaxAmmos(void);
+        int                             getEmpty(void)  const;
+        AmmoType                        getAmmoType(void);
+        AmmoType                        getDefaultAmmoType(void);
+        void                            fire(void);
+        void                            ejectClip(void);
+        void                            changeType(AmmoType newType);
+        void                            reload(void);
+        std::vector<Phaser::AmmoType>   getMagazine(void);
 
-        int                 getCurrentAmmos(void);
-        int                 getEmpty(void)  const;
-        AmmoType            getAmmoType(void);
-        void                fire(void);
-        void                ejectClip(void);
-        void                changeType(AmmoType newType);
     private:
-        static const int    Empty = 0;
-        int                 _maxAmmo;
-        AmmoType            _type;
+        int                             _maxAmmo;
+        AmmoType                        _type;
+        static const int                Empty = 0;
+        int                             _currentAmmo;
+        std::vector<AmmoType>           _magazine;
+
 };
 
 

@@ -23,5 +23,10 @@ int     main(void)
     phaser.changeType(Phaser::ROCKET);
     std::cout << "phaser.getAmmoType after changeType = " << phaser.getAmmoType() << std::endl;
 
+    std::cout << "3e phaser.fire = ";
+    phaser.fire();
+    std::cout << "phaser.reload = ";
+    phaser.reload();
+    phaser.fire();
     return 0;
 }

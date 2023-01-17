@@ -1,15 +1,32 @@
 #include "../include/Phaser.hpp"
 #include <iostream>
 
-Phaser::Phaser(int maxAmmo, AmmoType type) :    _maxAmmo(maxAmmo), _type(type)
-{}
+
+
+Phaser::Phaser(int maxAmmo, AmmoType type) :    _maxAmmo(maxAmmo), _type(type),
+                                                _currentAmmo(maxAmmo)
+{
+    for (int i = 0; i < _currentAmmo; i++) {
+        _magazine.push_back(_type);
+    }
+}
 
 Phaser::~Phaser(void)
 {}
 
-int                 Phaser::getCurrentAmmos(void)
+std::vector<Phaser::AmmoType>    Phaser::getMagazine(void)
+{
+    return _magazine;
+}
+
+int                 Phaser::getMaxAmmos(void)
 {
     return _maxAmmo;
+}
+
+int                 Phaser::getCurrentAmmos(void)
+{
+    return _currentAmmo;
 }
 
 int                 Phaser::getEmpty(void) const
@@ -38,13 +55,16 @@ void                Phaser::fire(void)
             std::cout << Sounds::Plasma << std::endl;
         else
             std::cout << Sounds::Rocket << std::endl;
-        _maxAmmo--;
+        _currentAmmo--;
+        _magazine.erase(_magazine.begin());
     }
 }
 
 void                Phaser::ejectClip(void)
 {
-    _maxAmmo = 0;
+    _currentAmmo = Empty;
+    // _magazine.clear();
+    _magazine.erase(_magazine.begin(), _magazine.end());
 }
 
 void                Phaser::changeType(AmmoType newType)
@@ -64,4 +84,13 @@ void                Phaser::changeType(AmmoType newType)
         _type = newType;
         std::cout << "Switching ammo to type: rocket" << std::endl;          
     }
+}
+
+void                Phaser::reload(void)
+{
+    std::cout << "Reloading..." << std::endl;
+    ejectClip();
+    _currentAmmo = _maxAmmo;
+    for(int i = 0; i < _currentAmmo; i++)
+        _magazine.push_back(_type);
 }
