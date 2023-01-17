@@ -120,3 +120,24 @@ Test(Phaser, test_Phaser_addAmmo, .init = redirect_all_stdout)
 
     cr_assert_stdout_eq_str("Booooooom\n");
 }
+
+Test(Phaser, test_main, .init = redirect_all_stdout)
+{  
+    Phaser  p(5, Phaser::ROCKET);
+
+    p.fire();
+    p.reload();
+
+    std::cout << "Firing all ammunitions" << std::endl;
+    while(p.getCurrentAmmos () > 0)
+        p.fire();
+
+    cr_assert_stdout_eq_str("Booooooom\n\
+Reloading...\n\
+Firing all ammunitions\n\
+Booooooom\n\
+Booooooom\n\
+Booooooom\n\
+Booooooom\n\
+Booooooom\n");
+}
