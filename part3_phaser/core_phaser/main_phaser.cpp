@@ -27,6 +27,13 @@ int     main(void)
     phaser.fire();
     std::cout << "phaser.reload = ";
     phaser.reload();
+
+    std::cout << "Phaser.addAmmo but Clip Full= ";
+    phaser.addAmmo(Phaser::ROCKET);
+    std::cout << "Phaser.addAmmo after fire = ";
     phaser.fire();
+    phaser.fire();
+    phaser.addAmmo(Phaser::ROCKET);
+
     return 0;
 }
