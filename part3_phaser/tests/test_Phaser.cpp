@@ -15,6 +15,8 @@ Test(Phaser, test_Phaser_ctor)
     cr_assert(p.getCurrentAmmos() == 20);
     cr_assert(p.getEmpty() == 0);
     cr_assert(p.getAmmoType() == Phaser::REGULAR);
+    for (int i; i < p.getAmmoType(); i++)
+        cr_assert(p.getMagazine()[i] == Phaser::REGULAR);
 }
 
 Test(Phaser, test_Phaser_fire_Regular,.init = redirect_all_stdout)
@@ -89,4 +91,13 @@ Test(Phaser, test_Phaser_changeType, .init = redirect_all_stdout)
     cr_assert(p.getAmmoType() == Phaser::PLASMA);
 
     cr_assert_stdout_eq_str("Switching ammo to type: plasma\n");
+}
+
+Test(Phaser, test_Phaser_reload, .init = redirect_all_stdout)
+{  
+    Phaser p(1, Phaser::ROCKET);
+    cr_assert(p.getCurrentAmmos() == 1);
+    p.reload();
+    cr_assert(p.getCurrentAmmos() == 1);
+    cr_assert_stdout_eq_str("Reloading...\n");
 }
