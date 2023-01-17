@@ -1,8 +1,16 @@
 #include "../test_include/test_Skat.hpp"
 #include <iostream>
 
-Skat::Skat(const std::string &name, int stimPaks) :     _name(name),
-                                                        _stimPaks(stimPaks)
+// Skat::Skat(const std::string &name, int stimPaks) :     _name(name),
+//                                                         _stimPaks(stimPaks)
+// {}
+
+Skat::Skat(const std::string& name,
+            int stimPaks, int serial,
+            int x, int y,
+            Phaser::AmmoType type) :
+            _name(name), _stimPaks(stimPaks), _kreogCom(x, y, serial),
+            _phaser(20, type)
 {}
 
 Skat::~Skat()
@@ -64,4 +72,14 @@ void                    Skat::status(void) const
 {
     std::cout   << "Soldier " << _name << " reporting "
                 << _stimPaks << " stimpaks remaining sir!" << std::endl;
+}
+
+KreogCom                Skat::getKreogCom(void)
+{
+    return _kreogCom;
+}
+
+Phaser                  Skat::getPhaser(void)
+{
+    return _phaser;
 }
