@@ -32,6 +32,7 @@ class   Skat
         Phaser                  getPhaser(void);
 
         void                    fire(void);
+        void                    locate(void) const;
 };
 
 

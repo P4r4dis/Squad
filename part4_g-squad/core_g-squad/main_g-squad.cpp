@@ -24,5 +24,7 @@ int     main(void)
 
     std::cout   << "skat.fire = ";
     skat.fire();
+    std::cout   << "skat.locate = ";
+    skat.locate();
     return 0;
 }

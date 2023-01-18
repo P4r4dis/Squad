@@ -77,3 +77,8 @@ void                    Skat::fire(void)
 {
     _phaser.fire();
 }
+
+void                    Skat::locate(void) const
+{
+    _kreogCom.locateSquad();
+}
