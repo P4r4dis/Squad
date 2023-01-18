@@ -28,5 +28,8 @@ int     main(void)
     skat.locate();
     std::cout   << "Skat.reload = ";
     skat.reload();
+
+    std::cout   << "Skat.com for get X position = " 
+                << skat.com().getX() << std::endl;
     return 0;
 }
