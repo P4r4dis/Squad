@@ -99,3 +99,8 @@ void                    Skat::reload(void)
 {
     _phaser.reload();
 }
+
+KreogCom&               Skat::com(void)
+{
+    return _kreogCom;
+}

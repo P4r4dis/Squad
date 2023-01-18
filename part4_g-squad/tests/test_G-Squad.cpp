@@ -168,6 +168,13 @@ Test(Skat, test_Skat_reload, .init = redirect_all_stdout)
     skat.reload();
     cr_assert_stdout_eq_str("KreogCom 0 initialized\nPiouPiouu\nReloading...\n");
 }
+
+Test(Skat, test_Skat_com)
+{  
+    Skat    skat;
+
+    cr_assert(skat.com().getX() == 0);
+}
 ////////////////////////////////////////////////////
 
 Test(Parts_Arms, test_Arms_ctor)
