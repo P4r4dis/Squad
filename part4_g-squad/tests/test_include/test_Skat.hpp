@@ -15,7 +15,6 @@ class   Skat
         KreogCom                _kreogCom;
         Phaser                  _phaser;
     public:
-        // Skat(const std::string& name = "bob", int stimPaks = 15);
         Skat(const std::string& name = "bob",
             int stimPaks = 15, int serial = 0,
             int x = 0, int y = 0,
@@ -34,6 +33,8 @@ class   Skat
 
         KreogCom                getKreogCom(void);
         Phaser                  getPhaser(void);
+
+        void                    fire(void);
 };
 
 #endif //   !__TEST_SKAT__

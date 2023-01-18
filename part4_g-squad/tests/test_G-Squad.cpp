@@ -142,6 +142,14 @@ Test(Skat, test_skat_construction)
     cr_assert(skat.getPhaser().getAmmoType() == Phaser::ROCKET);
 }
 
+Test(Skat, test_skat_fire, .init = redirect_all_stdout)
+{
+    Skat    skat("bob", 15, 101010, 10, 10, Phaser::ROCKET);
+
+    skat.fire();
+    cr_assert(skat.getPhaser().getCurrentAmmos() == 19);
+    cr_assert_stdout_eq_str("KreogCom 101010 initialized\nBooooooom\n");
+}
 
 ////////////////////////////////////////////////////
 
