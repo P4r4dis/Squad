@@ -26,5 +26,7 @@ int     main(void)
     skat.fire();
     std::cout   << "skat.locate = ";
     skat.locate();
+    std::cout   << "Skat.reload = ";
+    skat.reload();
     return 0;
 }

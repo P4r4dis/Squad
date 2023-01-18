@@ -82,3 +82,8 @@ void                    Skat::locate(void) const
 {
     _kreogCom.locateSquad();
 }
+
+void                    Skat::reload(void)
+{
+    _phaser.reload();
+}

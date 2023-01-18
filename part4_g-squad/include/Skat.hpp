@@ -33,6 +33,8 @@ class   Skat
 
         void                    fire(void);
         void                    locate(void) const;
+        void                    reload(void);
+
 };
 
 
