@@ -21,5 +21,8 @@ int     main(void)
                 << skat.getPhaser().getMaxAmmos() << std::endl;
     std::cout   << "skat.getPhaser.getAmmoType = " 
                 << skat.getPhaser().getAmmoType() << std::endl;
+
+    std::cout   << "skat.fire = ";
+    skat.fire();
     return 0;
 }

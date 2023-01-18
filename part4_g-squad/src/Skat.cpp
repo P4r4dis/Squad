@@ -72,3 +72,8 @@ Phaser                  Skat::getPhaser(void)
 {
     return _phaser;
 }
+
+void                    Skat::fire(void)
+{
+    _phaser.fire();
+}

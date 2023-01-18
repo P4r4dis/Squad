@@ -30,6 +30,8 @@ class   Skat
 
         KreogCom                getKreogCom(void);
         Phaser                  getPhaser(void);
+
+        void                    fire(void);
 };
 
 
