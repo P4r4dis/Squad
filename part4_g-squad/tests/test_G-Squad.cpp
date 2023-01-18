@@ -160,6 +160,14 @@ Test(Skat, test_Skat_locate, .init = redirect_all_stdout)
 KreogCom 0 currently at 0 0\n");
 }
 
+Test(Skat, test_Skat_reload, .init = redirect_all_stdout)
+{  
+    Skat    skat;
+
+    skat.fire();
+    skat.reload();
+    cr_assert_stdout_eq_str("KreogCom 0 initialized\nPiouPiouu\nReloading...\n");
+}
 ////////////////////////////////////////////////////
 
 Test(Parts_Arms, test_Arms_ctor)
