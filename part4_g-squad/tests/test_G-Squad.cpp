@@ -151,6 +151,15 @@ Test(Skat, test_skat_fire, .init = redirect_all_stdout)
     cr_assert_stdout_eq_str("KreogCom 101010 initialized\nBooooooom\n");
 }
 
+Test(Skat, test_Skat_locate, .init = redirect_all_stdout)
+{  
+    Skat    skat;
+
+    skat.locate();
+    cr_assert_stdout_eq_str("KreogCom 0 initialized\n\
+KreogCom 0 currently at 0 0\n");
+}
+
 ////////////////////////////////////////////////////
 
 Test(Parts_Arms, test_Arms_ctor)
