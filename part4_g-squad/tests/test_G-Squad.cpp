@@ -175,6 +175,7 @@ Test(Skat, test_Skat_com)
 
     cr_assert(skat.com().getX() == 0);
 }
+
 ////////////////////////////////////////////////////
 
 Test(Parts_Arms, test_Arms_ctor)
@@ -448,6 +449,20 @@ KreogCom 101010 currently at 42 42\n\
 KreogCom 51 shutting down\n\
 KreogCom 65 shutting down\n\
 KreogCom 101010 shutting down\n");
+}
+
+
+Test(KreogCom, test_KreogCom_addComPtr)
+{
+    KreogCom k1(1, 2, 3);
+    cr_assert(k1.getSerial() == 3);
+    cr_assert(k1.getX() == 1);
+    cr_assert(k1.getY() == 2);
+
+    // Test addCom() function
+    KreogCom k2(4, 5, 6);
+    k1.addCom(&k2);
+    cr_assert(k1.getCom() == &k2);
 }
 //////////////////////////////////////////////////////////////////////
 

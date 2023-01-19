@@ -45,6 +45,21 @@ void        KreogCom::addCom(int x, int y, int serial)
     _next = newKreogCom;
 }
 
+void        KreogCom::addCom(KreogCom *com)
+{
+
+    if(com == nullptr)
+    {
+        return;
+    }
+    if(_next != nullptr)
+    {
+        return;
+    }
+    _next = com;
+
+}
+
 // void        KreogCom::addComSmartPtr(int x, int y, int serial)
 // {
 //     // Create a new KreogCom with the given x, y, and serial values
@@ -101,4 +116,9 @@ void        KreogCom::locateSquad(void) const
     // Print information about the current KreogCom
         this->ping();
 
+}
+
+void        KreogCom::setNext(KreogCom *com)
+{
+    _next = com;
 }

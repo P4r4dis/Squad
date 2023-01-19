@@ -23,6 +23,7 @@ class   KreogCom
         int                         getY(void);
 
         void                        addCom(int x, int y, int serial);
+        void                        addCom(KreogCom *com);
         // void                        addComSmartPtr(int x, int y, int serial);
 
         KreogCom                    *getCom(void);
@@ -31,6 +32,8 @@ class   KreogCom
         void                        ping(void) const;
 
         void                        locateSquad(void) const;
+
+        void                        setNext(KreogCom *com);
 };
 
 #endif //   !__TEST_KREOGCOM__
