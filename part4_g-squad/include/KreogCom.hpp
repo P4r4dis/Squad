@@ -19,6 +19,7 @@ class   KreogCom
         int         getY(void);
 
         void        addCom(int x, int y, int serial);
+        void        addCom(KreogCom *com);
         KreogCom    *getCom(void);
 
         void        removeCom(void);

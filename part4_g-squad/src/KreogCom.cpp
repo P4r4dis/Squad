@@ -89,3 +89,18 @@ void        KreogCom::locateSquad(void) const
     // Print information about the current KreogCom
     ping();
 }
+
+void        KreogCom::addCom(KreogCom *com)
+{
+
+    if(com == nullptr)
+    {
+        return;
+    }
+    if(_next != nullptr)
+    {
+        return;
+    }
+    _next = com;
+
+}

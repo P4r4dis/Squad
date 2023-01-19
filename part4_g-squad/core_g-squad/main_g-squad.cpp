@@ -31,5 +31,14 @@ int     main(void)
 
     std::cout   << "Skat.com for get X position = " 
                 << skat.com().getX() << std::endl;
+    
+    std::cout   << "KreogCom.addCom(KreogCom *ptr) = ";
+    KreogCom k1(1, 2, 3);
+    std::cout   << "k1.getX = " << k1.getX() << ", ";
+    KreogCom k2(4, 5, 6);
+    k1.addCom(&k2);
+    std::cout   << "k1.getCom().getX() = " << k1.getCom()->getX() << std::endl;
+
+
     return 0;
 }
